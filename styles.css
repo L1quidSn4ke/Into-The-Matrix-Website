@@ -117,6 +117,14 @@ h1 {
     font-weight: bold;
 }
 
+.rating {
+    color: gold;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 /* =========================
    AMAZON LOGO SECTION
 ========================= */

@@ -1,149 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Favorite Movie Quotes</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #121212;
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            padding: 30px;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 15px;
-            color: #00d4ff;
-        }
-
-        .subtitle {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #cccccc;
-        }
-
-        .nav-links {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: white;
-            background: #5865F2;
-            padding: 10px 20px;
-            border-radius: 10px;
-            margin: 0 10px;
-            display: inline-block;
-        }
-
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .quote-card {
-            background-color: #1e1e1e;
-            width: 300px;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease;
-        }
-
-        .quote-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .quote-card h2 {
-            color: #00d4ff;
-            margin-bottom: 10px;
-        }
-
-        .quote {
-            font-style: italic;
-            line-height: 1.5;
-            margin-bottom: 15px;
-        }
-
-        .author {
-            text-align: right;
-            color: #bbbbbb;
-            font-weight: bold;
-        }
-
-        .amazon-section {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .amazon-section img {
-            width: 150px;
-            border-radius: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <h1>Favorite Movie Quotes</h1>
-    <p class="subtitle">Some of my favorite quotes from movies and games.</p>
+    <header>
+        <h1>Favorite Movie Quotes</h1>
 
-    <div class="nav-links">
-        <a href="https://discord.gg/3ud6S2FYjs" target="_blank">Join My Discord</a>
-    </div>
+        <p class="subtitle">
+            Some of my favorite quotes from movies and games.
+        </p>
 
-    <div class="card-container">
+        <div class="nav-links">
+            <a href="https://discord.gg/3ud6S2FYjs" target="_blank">
+                Join My Discord
+            </a>
+        </div>
+    </header>
 
-        <div class="quote-card">
-            <h2>Metal Gear Solid</h2>
-            <p class="quote">
-                "Can you feel it, Snake? The clashing of bone and sinew?"
-            </p>
-            <p class="author">- Grey Fox</p>
+    <main>
+
+        <div class="card-container">
+
+            <div class="quote-card">
+                <h2>Metal Gear Solid</h2>
+
+                <p class="quote">
+                    "Can you feel it, Snake? The clashing of bone and sinew?"
+                </p>
+<p class="rating">★★★★★</p>
+                <p class="author">
+                    - Grey Fox
+                </p>
+            </div>
+
+            <div class="quote-card">
+                <h2>Bad Boys</h2>
+
+                <p class="quote">
+                    "Gimme a pack of tropical fruit bubbliscious. And some skittles."
+                </p>
+<p class="rating">★★★★</p>
+                <p class="author">
+                    - Those Cops
+                </p>
+            </div>
+
+            <div class="quote-card">
+                <h2>Ready Player One</h2>
+
+                <p class="quote">
+                    "It's fuckin' Chucky!"
+                </p>
+<p class="rating">★★★★★</p>
+                <p class="author">
+                    - IOI Drone 665312
+                </p>
+            </div>
+
+            <div class="quote-card">
+                <h2>Talladega Nights</h2>
+
+                <p class="quote">
+                    "116! I'm goin' fast again!"
+                </p>
+<p class="rating">★★★★★</p>
+                <p class="author">
+                    - Ricky Bobby
+                </p>
+            </div>
+
         </div>
 
-        <div class="quote-card">
-            <h2>Top Gun</h2>
-            <p class="quote">
-                "I feel the need... the need for speed!"
-            </p>
-            <p class="author">- Maverick</p>
+    </main>
+
+    <footer>
+
+        <div class="amazon-section">
+            <a href="https://www.amazon.com" target="_blank">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+                    alt="Amazon Logo">
+            </a>
         </div>
 
-        <div class="quote-card">
-            <h2>Child's Play</h2>
-            <p class="quote">
-                "Oh shit! It's fuckin' Chucky!"
-            </p>
-            <p class="author">- Child's Play</p>
-        </div>
-
-        <div class="quote-card">
-            <h2>Taken</h2>
-            <p class="quote">
-                "I have a particular set of skills."
-            </p>
-            <p class="author">- Bryan Mills</p>
-        </div>
-
-    </div>
-
-    <div class="amazon-section">
-        <a href="https://www.amazon.com" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt=  </div>
+    </footer>
 
 </body>
+
 </html>
