@@ -129,21 +129,49 @@ h1 {
    AMAZON LOGO SECTION
 ========================= */
 
-.amazon-section {
+.socials-section {
     text-align: center;
     margin-top: 50px;
 }
 
-.amazon-section img {
-    background: white;
-    width: 220px;
-    padding: 10px;
-    border-radius: 10px;
+.socials-section h3 {
+    color: #00d4ff;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
 }
 
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
 
-.amazon-section img:hover {
-    transform: scale(1.05);
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    text-decoration: none;
+    background: rgba(88, 101, 242, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 20px rgba(88, 101, 242, 0.8);
+    background: linear-gradient(135deg, #5865f2, #7289da);
+}
+
+.social-links img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 /* =========================
