@@ -4,7 +4,7 @@ A responsive, single-page website concept for **Into the Matrix://**, a computer
 
 ## About the project
 
-The site introduces the brand, summarizes its services and background, and directs visitors to Discord for questions and service requests. Its visual style uses a dark interface with cyan and blue accents, responsive layouts, and a subtle animated background effect.
+The site introduces the brand, summarizes its services and background, and directs visitors to Discord for questions and service requests. Its visual style uses a dark interface with Matrix-inspired green accents, responsive layouts, and a subtle animated background effect.
 
 The site uses plain HTML, CSS, and a small amount of JavaScript for the mobile navigation menu. It does not require a framework, external libraries, or a build process. Service descriptions and business information should be reviewed and kept accurate before using the site to advertise real services.
 

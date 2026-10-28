@@ -3,14 +3,15 @@
    ------------------------------ */
 :root {
   color-scheme: dark;
-  --color-page: #07111c;
-  --color-panel: #0c1a28;
-  --color-panel-light: #102235;
-  --color-text: #eaf5fb;
-  --color-muted: #9db1c1;
-  --color-accent: #38d8f2;
-  --color-blue: #5599ff;
-  --color-border: rgba(139, 184, 211, 0.17);
+  --color-page: #030805;
+  --color-panel: #07110a;
+  --color-panel-light: #0c1b10;
+  --color-text: #e8f4e9;
+  --color-muted: #a1b5a3;
+  --color-accent: #39ff14;
+  --color-accent-bright: #a2ff8a;
+  --color-blue: #8dff54;
+  --color-border: rgba(100, 255, 75, 0.18);
   --font-body: "Segoe UI", Arial, sans-serif;
   --content-width: 1120px;
 }
@@ -58,7 +59,7 @@ a:focus-visible {
   padding: 10px 14px;
   transform: translateY(-160%);
   background: var(--color-accent);
-  color: #06121c;
+  color: #061006;
   font-weight: 700;
   text-decoration: none;
 }
@@ -83,7 +84,7 @@ a:focus-visible {
   position: relative;
   z-index: 2;
   border-bottom: 1px solid var(--color-border);
-  background: rgba(7, 17, 28, 0.92);
+  background: rgba(3, 8, 5, 0.94);
 }
 
 .header-inner,
@@ -113,9 +114,9 @@ a:focus-visible {
   width: 36px;
   height: 36px;
   place-items: center;
-  border: 1px solid rgba(56, 216, 242, 0.45);
+  border: 1px solid rgba(57, 255, 20, 0.45);
   border-radius: 9px;
-  background: rgba(56, 216, 242, 0.08);
+  background: rgba(57, 255, 20, 0.08);
   color: var(--color-accent);
   font-family: Consolas, monospace;
 }
@@ -156,58 +157,81 @@ a:focus-visible {
   overflow: hidden;
   padding-block: 90px 100px;
   background:
-    radial-gradient(ellipse at 75% 45%, rgba(31, 112, 160, 0.15), transparent 34%),
-    linear-gradient(135deg, #081522 0%, #091725 55%, #07111c 100%);
+    radial-gradient(ellipse at 75% 45%, rgba(45, 180, 34, 0.13), transparent 36%),
+    linear-gradient(135deg, #050b06 0%, #09140a 55%, #030805 100%);
 }
 
-/* Soft, scrolling columns add motion without needing an image or JavaScript. */
+/* Keep a subtle green glow behind the falling code decoration. */
 .hero::before {
   position: absolute;
   z-index: 0;
   inset: 0;
-  background-image:
-    linear-gradient(
-      180deg,
-      transparent 0 8%,
-      rgba(56, 216, 242, 0.14) 8.5% 9%,
-      transparent 9.5% 35%,
-      rgba(85, 153, 255, 0.1) 35.5% 36.5%,
-      transparent 37% 70%,
-      rgba(56, 216, 242, 0.1) 70.5% 71%,
-      transparent 72%
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0 42px,
-      rgba(56, 216, 242, 0.045) 43px 44px,
-      transparent 45px 84px
-    );
-  background-size: 84px 240px, 84px 100%;
-  background-position: 0 0, 0 0;
-  animation: matrix-drift 24s linear infinite;
+  background: radial-gradient(ellipse at 75% 45%, rgba(45, 180, 34, 0.08), transparent 48%);
   content: "";
-  mask-image: linear-gradient(90deg, transparent, #000 20%, #000 85%, transparent);
   pointer-events: none;
 }
 
-@keyframes matrix-drift {
-  to {
-    background-position: 0 -240px, 0 0;
-  }
-}
-
-.hero-grid {
+.matrix-rain {
   position: absolute;
   z-index: 0;
-  inset: auto 0 0;
-  height: 95px;
-  opacity: 0.32;
-  background-image:
-    linear-gradient(rgba(56, 216, 242, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(56, 216, 242, 0.12) 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: linear-gradient(to bottom, transparent, #000);
+  inset: 0;
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+  opacity: 0.18;
+  mask-image: linear-gradient(to bottom, transparent, #000 15%, #000 85%, transparent);
   pointer-events: none;
+}
+
+.matrix-rain span {
+  color: var(--color-accent-bright);
+  font-family: Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  text-shadow: 0 0 8px rgba(57, 255, 20, 0.75);
+  transform: translateY(-110%);
+  animation: code-rain 16s linear infinite;
+}
+
+.matrix-rain span:nth-child(2) {
+  animation-delay: -7s;
+  animation-duration: 19s;
+}
+
+.matrix-rain span:nth-child(3) {
+  animation-delay: -12s;
+  animation-duration: 14s;
+}
+
+.matrix-rain span:nth-child(4) {
+  animation-delay: -4s;
+  animation-duration: 21s;
+}
+
+.matrix-rain span:nth-child(5) {
+  animation-delay: -15s;
+  animation-duration: 17s;
+}
+
+.matrix-rain span:nth-child(6) {
+  animation-delay: -9s;
+  animation-duration: 20s;
+}
+
+.matrix-rain span:nth-child(7) {
+  animation-delay: -2s;
+  animation-duration: 15s;
+}
+
+.matrix-rain span:nth-child(8) {
+  animation-delay: -11s;
+  animation-duration: 18s;
+}
+
+@keyframes code-rain {
+  to {
+    transform: translateY(110vh);
+  }
 }
 
 .hero-layout {
@@ -241,7 +265,7 @@ a:focus-visible {
   height: 8px;
   border-radius: 50%;
   background: var(--color-accent);
-  box-shadow: 0 0 14px rgba(56, 216, 242, 0.8);
+  box-shadow: 0 0 14px rgba(57, 255, 20, 0.75);
 }
 
 h1,
@@ -260,7 +284,7 @@ h1 {
 
 .hero-subtitle {
   margin-bottom: 20px;
-  color: #c3d5e2;
+  color: #c8dfca;
   font-size: clamp(1.05rem, 2vw, 1.3rem);
   font-weight: 600;
 }
@@ -299,11 +323,11 @@ h1 {
 
 .button-primary {
   background: var(--color-accent);
-  color: #05131c;
+  color: #061006;
 }
 
 .button-primary:hover {
-  background: #7beaff;
+  background: var(--color-accent-bright);
 }
 
 .button-secondary {
@@ -313,13 +337,13 @@ h1 {
 }
 
 .button-secondary:hover {
-  border-color: rgba(56, 216, 242, 0.65);
-  background: rgba(56, 216, 242, 0.07);
+  border-color: rgba(57, 255, 20, 0.65);
+  background: rgba(57, 255, 20, 0.07);
 }
 
 .hero-note {
   margin: 20px 0 0;
-  color: #8098aa;
+  color: #8da78f;
   font-size: 0.86rem;
 }
 
@@ -340,13 +364,13 @@ h1 {
 
 .orbit-outer {
   inset: 5%;
-  border: 1px solid rgba(56, 216, 242, 0.21);
-  box-shadow: 0 0 70px rgba(40, 125, 196, 0.1), inset 0 0 70px rgba(40, 125, 196, 0.08);
+  border: 1px solid rgba(100, 255, 75, 0.24);
+  box-shadow: 0 0 70px rgba(57, 255, 20, 0.1), inset 0 0 70px rgba(57, 255, 20, 0.07);
 }
 
 .orbit-inner {
   inset: 17%;
-  border: 1px dashed rgba(85, 153, 255, 0.38);
+  border: 1px dashed rgba(141, 255, 84, 0.42);
   transform: rotate(-24deg);
 }
 
@@ -357,9 +381,9 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(56, 216, 242, 0.42);
-  background: radial-gradient(circle at 35% 25%, #163b53, #0b1c2b 70%);
-  box-shadow: 0 0 50px rgba(56, 216, 242, 0.15);
+  border: 1px solid rgba(100, 255, 75, 0.42);
+  background: radial-gradient(circle at 35% 25%, #18351a, #091209 70%);
+  box-shadow: 0 0 50px rgba(57, 255, 20, 0.15);
 }
 
 .art-prompt {
@@ -370,7 +394,7 @@ h1 {
 }
 
 .art-caption {
-  color: #a4c0d0;
+  color: #b6d2b7;
   font-family: Consolas, monospace;
   font-size: 0.68rem;
   letter-spacing: 0.18em;
@@ -380,7 +404,7 @@ h1 {
 
 .art-label {
   position: absolute;
-  color: #85a9bc;
+  color: #a1c9a0;
   font-family: Consolas, monospace;
   font-size: 0.62rem;
   letter-spacing: 0.13em;
@@ -400,7 +424,7 @@ h1 {
    4. Services section and cards
    ------------------------------ */
 .section-light {
-  background: #0a1622;
+  background: #071009;
 }
 
 .section-heading {
@@ -432,7 +456,7 @@ h1 {
 .approach-card {
   border: 1px solid var(--color-border);
   border-radius: 11px;
-  background: linear-gradient(145deg, rgba(16, 34, 53, 0.92), rgba(10, 25, 39, 0.92));
+  background: linear-gradient(145deg, rgba(13, 30, 14, 0.96), rgba(6, 16, 8, 0.96));
 }
 
 .service-card {
@@ -443,7 +467,7 @@ h1 {
 
 .service-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(56, 216, 242, 0.45);
+  border-color: rgba(57, 255, 20, 0.45);
 }
 
 .card-number {
@@ -485,7 +509,7 @@ h1 {
    ------------------------------ */
 .about-section {
   background:
-    radial-gradient(ellipse at 90% 50%, rgba(24, 97, 134, 0.12), transparent 35%),
+    radial-gradient(ellipse at 90% 50%, rgba(38, 135, 32, 0.13), transparent 38%),
     var(--color-page);
 }
 
@@ -501,7 +525,7 @@ h1 {
 }
 
 .about-intro .about-lead {
-  color: #c6d9e5;
+  color: #c6dfc7;
   font-size: 1.1rem;
   font-weight: 600;
 }
@@ -546,7 +570,7 @@ h1 {
   height: 27px;
   flex: 0 0 27px;
   place-items: center;
-  border: 1px solid rgba(56, 216, 242, 0.35);
+  border: 1px solid rgba(100, 255, 75, 0.35);
   border-radius: 50%;
   color: var(--color-accent);
   font-weight: 700;
@@ -556,7 +580,7 @@ h1 {
    6. Contact options and placeholders
    ------------------------------ */
 .contact-section {
-  background: #0a1622;
+  background: #071009;
 }
 
 .contact-heading {
@@ -581,9 +605,9 @@ h1 {
   height: 38px;
   margin-bottom: 18px;
   place-items: center;
-  border: 1px solid rgba(56, 216, 242, 0.32);
+  border: 1px solid rgba(100, 255, 75, 0.32);
   border-radius: 9px;
-  background: rgba(56, 216, 242, 0.07);
+  background: rgba(57, 255, 20, 0.07);
   color: var(--color-accent);
   font-family: Consolas, monospace;
   font-weight: 700;
@@ -628,17 +652,17 @@ h1 {
 }
 
 .text-link:hover {
-  color: #9af1ff;
+  color: var(--color-accent-bright);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
 .contact-card-muted {
-  background: rgba(12, 26, 40, 0.58);
+  background: rgba(7, 17, 8, 0.72);
 }
 
 .coming-soon {
-  color: #8ca2b1;
+  color: #91a993;
   font-size: 0.85rem;
 }
 
@@ -647,7 +671,7 @@ h1 {
    ------------------------------ */
 .site-footer {
   border-top: 1px solid var(--color-border);
-  background: #06101a;
+  background: #020603;
 }
 
 .footer-inner {
@@ -671,7 +695,7 @@ h1 {
 .footer-copy,
 .footer-social {
   margin: 0;
-  color: #8297a6;
+  color: #8ca18d;
   font-size: 0.82rem;
 }
 
@@ -758,7 +782,7 @@ h1 {
 
   .menu-toggle:hover,
   .menu-toggle:focus-visible {
-    border-color: rgba(56, 216, 242, 0.65);
+    border-color: rgba(57, 255, 20, 0.65);
   }
 
   .menu-icon {
@@ -866,7 +890,7 @@ h1 {
     scroll-behavior: auto;
   }
 
-  .hero::before {
+  .matrix-rain span {
     animation: none;
   }
 
