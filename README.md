@@ -1,12 +1,12 @@
 # Into the Matrix://
 
-A responsive, single-page website concept for **Into the Matrix://**, a computer repair, networking, and cybersecurity services brand. The project is built with plain HTML and CSS as a hands-on web development learning project.
+A responsive, single-page website concept for **Into the Matrix://**, a computer repair, networking, and cybersecurity services brand. The project uses plain HTML, CSS, and JavaScript as a hands-on web development learning project.
 
 ## About the project
 
 The site introduces the brand, summarizes its services and background, and directs visitors to Discord for questions and service requests. Its visual style uses a dark interface with cyan and blue accents, responsive layouts, and a subtle animated background effect.
 
-This project does not use a JavaScript framework, external libraries, or a build process. Service descriptions and business information should be reviewed and kept accurate before using the site to advertise real services.
+The site uses plain HTML, CSS, and a small amount of JavaScript for the mobile navigation menu. It does not require a framework, external libraries, or a build process. Service descriptions and business information should be reviewed and kept accurate before using the site to advertise real services.
 
 ## Features
 
@@ -16,7 +16,8 @@ This project does not use a JavaScript framework, external libraries, or a build
 - Discord links and guidance for finding support channels
 - Keyboard focus styles and a skip-to-content link
 - Reduced-motion support for visitors who prefer less animation
-- CSS-only visuals; no JavaScript or third-party assets are required
+- A keyboard-accessible mobile navigation menu
+- CSS-only visuals; no third-party assets are required
 
 ## Project structure
 
@@ -24,8 +25,10 @@ This project does not use a JavaScript framework, external libraries, or a build
 Learning HTML/
 ├── index.html       # Page content and semantic structure
 ├── README.md        # Project overview and usage notes
-└── css/
-    └── styles.css   # Theme, layout, and responsive styles
+├── css/
+│   └── styles.css   # Theme, layout, and responsive styles
+└── js/
+    └── main.js      # Mobile navigation menu behavior
 ```
 
 ## View the site
@@ -44,4 +47,4 @@ For a more realistic local preview, open the project folder in a code editor and
 
 ## Learning goals
 
-This project is intended to practice writing semantic HTML, organizing CSS with reusable classes and custom properties, creating responsive layouts with Grid and Flexbox, and considering basic accessibility.
+This project is intended to practice writing semantic HTML, organizing CSS with reusable classes and custom properties, creating responsive layouts with Grid and Flexbox, adding simple JavaScript interactions, and considering basic accessibility.

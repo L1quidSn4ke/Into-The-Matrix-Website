@@ -6,6 +6,7 @@
   <meta name="description" content="Into the Matrix:// provides thoughtful computer repair, networking, cybersecurity, custom PC, and home lab services.">
   <title>Into the Matrix:// | Computer Repair, Networking &amp; Cybersecurity</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <!-- Keyboard users can skip directly to the page's main content. -->
@@ -19,7 +20,12 @@
         <span>Into the Matrix<span class="brand-slashes">://</span></span>
       </a>
 
-      <nav class="site-nav" aria-label="Main navigation">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
+        <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>Menu</span>
+      </button>
+
+      <nav class="site-nav" id="main-navigation" aria-label="Main navigation">
         <a href="#services">Services</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
