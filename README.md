@@ -4,15 +4,19 @@ A responsive, single-page website concept for **Into the Matrix://**, a computer
 
 ## About the project
 
-The site introduces the brand, summarizes its services and background, and directs visitors to Discord for questions and service requests. Its visual style uses a dark interface with Matrix-inspired green accents, responsive layouts, and a subtle animated background effect.
+The site introduces the brand, summarizes its services and background, showcases hands-on learning projects, and directs visitors to Discord for questions and service requests. Its visual style uses a dark interface with Matrix-inspired green accents, responsive layouts, and a subtle animated background effect.
 
 The site uses plain HTML, CSS, and a small amount of JavaScript for the mobile navigation menu. It does not require a framework, external libraries, or a build process. Service descriptions and business information should be reviewed and kept accurate before using the site to advertise real services.
 
 ## Features
 
-- Semantic HTML sections for navigation, services, about, and contact information
+- Semantic HTML sections for navigation, services, about, portfolio, recent work, trust, service area, and contact information
 - Responsive layout for desktop, tablet, and mobile screens
 - Service cards for computer repair, networking, cybersecurity, custom PC builds, and home lab consulting
+- Six portfolio cards with CSS-drawn image placeholders and skill tags
+- Three clearly labeled illustrative problem/solution/result examples
+- A trust section highlighting background, communication, recommendations, support, and continuing education
+- A dedicated Killeen, Texas service-area section describing local and remote support options
 - Discord links and guidance for finding support channels
 - Keyboard focus styles and a skip-to-content link
 - Reduced-motion support for visitors who prefer less animation
@@ -40,11 +44,25 @@ For a more realistic local preview, open the project folder in a code editor and
 ## Customize before publishing
 
 1. Review the service descriptions, service area, and business background for accuracy.
-2. Confirm that the Discord invite and channel names are current.
-3. Add a business email or contact form when one is available.
-4. Update the page title and meta description in the `<head>` of `index.html` if the business details change.
-5. Test the layout at both desktop and mobile widths before sharing the site.
+2. Replace the CSS-drawn portfolio placeholders and illustrative recent-work scenarios with representative project images and verified work before publishing them as completed client projects.
+3. Confirm that the Discord invite and channel names are current.
+4. Add a business email or contact form when one is available.
+5. Update the page title and meta description in the `<head>` of `index.html` if the business details change.
+6. Test the layout at both desktop and mobile widths before sharing the site.
 
 ## Learning goals
 
 This project is intended to practice writing semantic HTML, organizing CSS with reusable classes and custom properties, creating responsive layouts with Grid and Flexbox, adding simple JavaScript interactions, and considering basic accessibility.
+
+## Implemented Commit Ideas
+
+- [x] `feat: add falling matrix style code`
+- [x] `feat: add portfolio section`
+- [x] `feat: add customer success stories` — the current Recent Work examples are illustrative, not verified client testimonials.
+- [x] `feat: add homelab project cards`
+- [x] `feat: add Raspberry Pi showcase`
+- [x] `style: improve portfolio card layout`
+- [x] `feat: add service area section`
+- [x] `feat: add business footer`
+
+Replace illustrative examples with accurate, client-approved stories before presenting them as completed customer work.
