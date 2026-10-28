@@ -452,8 +452,7 @@ h1 {
 }
 
 .service-card,
-.contact-card,
-.approach-card {
+.contact-card {
   border: 1px solid var(--color-border);
   border-radius: 11px;
   background: linear-gradient(145deg, rgba(13, 30, 14, 0.96), rgba(6, 16, 8, 0.96));
@@ -505,7 +504,7 @@ h1 {
 }
 
 /* ------------------------------
-   5. About section and approach list
+   5. About section
    ------------------------------ */
 .about-section {
   background:
@@ -515,9 +514,7 @@ h1 {
 
 .about-layout {
   display: grid;
-  grid-template-columns: 1fr 0.85fr;
-  align-items: center;
-  gap: 72px;
+  grid-template-columns: minmax(0, 760px);
 }
 
 .about-intro > p:not(.eyebrow) {
@@ -528,52 +525,6 @@ h1 {
   color: #c6dfc7;
   font-size: 1.1rem;
   font-weight: 600;
-}
-
-.approach-card {
-  padding: 30px;
-}
-
-.approach-label {
-  margin-bottom: 24px;
-  color: var(--color-accent);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.approach-list {
-  display: grid;
-  gap: 22px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.approach-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  color: var(--color-muted);
-  font-size: 0.91rem;
-}
-
-.approach-list strong {
-  color: var(--color-text);
-  font-size: 0.98rem;
-}
-
-.check-mark {
-  display: grid;
-  width: 27px;
-  height: 27px;
-  flex: 0 0 27px;
-  place-items: center;
-  border: 1px solid rgba(100, 255, 75, 0.35);
-  border-radius: 50%;
-  color: var(--color-accent);
-  font-weight: 700;
 }
 
 /* ------------------------------
@@ -667,7 +618,287 @@ h1 {
 }
 
 /* ------------------------------
-   7. Footer and small-screen layout
+   7. Portfolio, case studies, and trust
+   ------------------------------ */
+.portfolio-grid,
+.recent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.portfolio-card,
+.recent-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 11px;
+  background: linear-gradient(145deg, rgba(13, 30, 14, 0.96), rgba(6, 16, 8, 0.96));
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.portfolio-card:hover,
+.recent-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(57, 255, 20, 0.45);
+}
+
+.portfolio-visual {
+  display: flex;
+  min-height: 170px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  border-bottom: 1px solid var(--color-border);
+  background:
+    linear-gradient(rgba(7, 17, 8, 0.35), rgba(3, 8, 5, 0.82)),
+    repeating-linear-gradient(0deg, transparent 0 23px, rgba(57, 255, 20, 0.08) 24px),
+    radial-gradient(ellipse at 50% 40%, rgba(57, 255, 20, 0.17), transparent 60%),
+    #071009;
+  color: var(--color-accent-bright);
+  font-family: Consolas, monospace;
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 18px rgba(57, 255, 20, 0.45);
+  text-align: center;
+}
+
+.visual-caption {
+  color: #91a993;
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-shadow: none;
+}
+
+.visual-lab {
+  background:
+    linear-gradient(rgba(7, 17, 8, 0.4), rgba(3, 8, 5, 0.84)),
+    repeating-linear-gradient(90deg, transparent 0 36px, rgba(57, 255, 20, 0.07) 37px),
+    radial-gradient(ellipse at 50% 40%, rgba(57, 255, 20, 0.17), transparent 60%),
+    #071009;
+}
+
+.visual-pc {
+  background:
+    linear-gradient(rgba(7, 17, 8, 0.35), rgba(3, 8, 5, 0.82)),
+    repeating-linear-gradient(135deg, transparent 0 30px, rgba(57, 255, 20, 0.07) 31px),
+    radial-gradient(ellipse at 50% 40%, rgba(57, 255, 20, 0.17), transparent 60%),
+    #071009;
+}
+
+.portfolio-copy {
+  padding: 21px;
+}
+
+.portfolio-copy h3,
+.recent-card h3 {
+  margin-bottom: 8px;
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+.portfolio-copy > p:not(.skill-label) {
+  min-height: 4.5em;
+  margin-bottom: 17px;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.skill-label {
+  margin-bottom: 8px;
+  color: #c6dfc7;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-list li {
+  padding: 4px 9px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: rgba(57, 255, 20, 0.045);
+  color: var(--color-muted);
+  font-size: 0.75rem;
+}
+
+.recent-section {
+  background:
+    radial-gradient(ellipse at 12% 35%, rgba(38, 135, 32, 0.1), transparent 34%),
+    var(--color-page);
+}
+
+.recent-card {
+  padding: 24px;
+}
+
+.case-study {
+  display: grid;
+  gap: 17px;
+  margin: 0;
+}
+
+.case-study div {
+  padding-left: 13px;
+  border-left: 2px solid rgba(57, 255, 20, 0.42);
+}
+
+.case-study dt {
+  margin-bottom: 3px;
+  color: var(--color-accent);
+  font-family: Consolas, monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.case-study dd {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+}
+
+.why-section {
+  background: #071009;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trust-grid li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: rgba(3, 8, 5, 0.56);
+  color: var(--color-muted);
+  font-size: 0.88rem;
+}
+
+.trust-grid strong {
+  color: var(--color-text);
+  font-size: 0.94rem;
+}
+
+.trust-mark {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  place-items: center;
+  border: 1px solid rgba(100, 255, 75, 0.35);
+  border-radius: 8px;
+  color: var(--color-accent);
+  font-family: Consolas, monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+/* ------------------------------
+   8. Service area
+   ------------------------------ */
+.area-section {
+  background:
+    radial-gradient(ellipse at 85% 50%, rgba(38, 135, 32, 0.12), transparent 38%),
+    var(--color-page);
+}
+
+.area-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 64px;
+}
+
+.area-copy h2 {
+  margin-bottom: 16px;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  letter-spacing: -0.04em;
+  line-height: 1.18;
+}
+
+.area-description {
+  max-width: 550px;
+  margin-bottom: 24px;
+  color: var(--color-muted);
+}
+
+.area-panel {
+  padding: 28px;
+  border: 1px solid var(--color-border);
+  border-radius: 11px;
+  background: linear-gradient(145deg, rgba(13, 30, 14, 0.96), rgba(6, 16, 8, 0.96));
+}
+
+.area-panel-label {
+  margin-bottom: 18px;
+  color: var(--color-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.area-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.area-option + .area-option {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.area-option-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  place-items: center;
+  border: 1px solid rgba(100, 255, 75, 0.35);
+  border-radius: 8px;
+  color: var(--color-accent);
+  font-family: Consolas, monospace;
+  font-size: 0.76rem;
+}
+
+.area-option h3 {
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.area-option p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+}
+
+/* ------------------------------
+   9. Footer and small-screen layout
    ------------------------------ */
 .site-footer {
   border-top: 1px solid var(--color-border);
@@ -675,11 +906,10 @@ h1 {
 }
 
 .footer-inner {
-  display: flex;
-  min-height: 92px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 42px;
+  padding-block: 42px;
 }
 
 .footer-brand {
@@ -692,11 +922,61 @@ h1 {
   font-size: 0.85rem;
 }
 
-.footer-copy,
-.footer-social {
-  margin: 0;
+.footer-business > p {
+  max-width: 300px;
+  margin: 14px 0 0;
   color: #8ca18d;
   font-size: 0.82rem;
+}
+
+.footer-services h2,
+.footer-social h2 {
+  margin: 3px 0 12px;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.footer-services ul,
+.footer-social ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-services a,
+.footer-social a,
+.footer-bottom a {
+  color: #8ca18d;
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
+.footer-services a:hover,
+.footer-social a:hover,
+.footer-bottom a:hover {
+  color: var(--color-accent);
+}
+
+.footer-social a span {
+  color: #647765;
+  font-size: 0.72rem;
+}
+
+.footer-bottom {
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-copy {
+  margin: 0;
+  color: #8ca18d;
+  font-size: 0.78rem;
 }
 
 @media (max-width: 820px) {
@@ -725,26 +1005,19 @@ h1 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .portfolio-grid,
+  .recent-grid,
+  .trust-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .contact-card:last-child:nth-child(odd) {
     grid-column: 1 / -1;
   }
-
-  .about-layout {
-    gap: 38px;
-  }
 }
 
-@media (max-width: 620px) {
-  .container {
-    width: min(var(--content-width), calc(100% - 36px));
-  }
-
-  .section-shell {
-    padding-block: 62px;
-  }
-
+@media (max-width: 900px) {
   .header-inner {
-    min-height: 68px;
     flex-wrap: wrap;
     padding-block: 12px;
   }
@@ -762,6 +1035,11 @@ h1 {
 
   html.js-enabled .site-nav:not(.is-open) {
     display: none;
+  }
+
+  .site-nav a {
+    width: 100%;
+    padding-block: 4px;
   }
 
   .menu-toggle {
@@ -815,9 +1093,15 @@ h1 {
     padding-top: 8px;
     border-top: 1px solid var(--color-border);
   }
+}
 
-  .site-nav a {
-    padding-block: 4px;
+@media (max-width: 760px) {
+  .container {
+    width: min(var(--content-width), calc(100% - 36px));
+  }
+
+  .section-shell {
+    padding-block: 62px;
   }
 
   .brand {
@@ -851,21 +1135,21 @@ h1 {
   }
 
   .service-grid,
+  .portfolio-grid,
+  .recent-grid,
+  .trust-grid,
   .contact-grid,
-  .about-layout {
+  .about-layout,
+  .area-layout {
     grid-template-columns: 1fr;
+  }
+
+  .area-layout {
+    gap: 28px;
   }
 
   .service-card {
     min-height: auto;
-  }
-
-  .about-layout {
-    gap: 28px;
-  }
-
-  .approach-card {
-    padding: 24px;
   }
 
   .contact-card {
@@ -877,11 +1161,23 @@ h1 {
   }
 
   .footer-inner {
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    padding-block: 22px;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+    padding-block: 32px;
+  }
+
+  .footer-business {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    min-height: 64px;
+    flex-wrap: wrap;
+    padding-block: 12px;
+  }
+
+  .portfolio-copy > p:not(.skill-label) {
+    min-height: 0;
   }
 }
 
