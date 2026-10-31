@@ -12,7 +12,7 @@ The site uses plain HTML, CSS, and a small amount of JavaScript for the mobile n
 
 - Semantic HTML sections for navigation, services, about, portfolio, recent work, trust, service area, and contact information
 - Responsive layout for desktop, tablet, and mobile screens
-- Service cards for computer repair, networking, cybersecurity, custom PC builds, and home lab consulting
+- Service cards for computer repair, networking, cybersecurity, custom PC builds, and home lab consulting, each with a custom inline icon
 - Six portfolio cards with CSS-drawn image placeholders and skill tags
 - Three clearly labeled illustrative problem/solution/result examples
 - Section info cards for services, about, portfolio, recent work, trust, service area, and contact
