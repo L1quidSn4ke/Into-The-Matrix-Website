@@ -818,9 +818,42 @@ h1 {
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.65);
 }
 
-.card-dialog::backdrop {
+.section-dialog {
+  width: min(1000px, calc(100% - 32px));
+  max-height: min(88vh, 900px);
+  overflow: auto;
+  padding: 12px 28px 0;
+  border: 1px solid rgba(100, 255, 75, 0.35);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #0c1b10, #050b06);
+  color: var(--color-text);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.65);
+}
+
+.card-dialog::backdrop,
+.section-dialog::backdrop {
   background: rgba(0, 0, 0, 0.78);
   backdrop-filter: blur(4px);
+}
+
+.section-dialog-heading {
+  position: sticky;
+  z-index: 1;
+  top: -12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-block: 12px;
+  background: #0c1b10;
+}
+
+.section-dialog-heading .eyebrow {
+  margin-bottom: 0;
+}
+
+.section-dialog .section-shell {
+  padding-block: 44px;
 }
 
 .card-dialog-heading {
@@ -868,7 +901,34 @@ h1 {
   cursor: pointer;
 }
 
+.section-dialog-close {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.card-dialog-close:focus-visible,
+.section-dialog-close:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
 .card-dialog-close:hover {
+  border-color: rgba(57, 255, 20, 0.65);
+  color: var(--color-accent);
+}
+
+.section-dialog-close:hover {
   border-color: rgba(57, 255, 20, 0.65);
   color: var(--color-accent);
 }
@@ -1202,6 +1262,16 @@ h1 {
     width: min(var(--content-width), calc(100% - 36px));
   }
 
+  .section-dialog {
+    width: calc(100% - 20px);
+    max-height: 90vh;
+    padding: 10px 12px 0;
+  }
+
+  .section-dialog .section-shell {
+    padding-block: 32px;
+  }
+
   .section-shell {
     padding-block: 62px;
   }
@@ -1294,4 +1364,9 @@ h1 {
   *::after {
     transition-duration: 0.01ms !important;
   }
+}
+
+html.section-cards-enabled main > section:not(#home),
+html.section-cards-enabled .site-footer {
+  display: none;
 }

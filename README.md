@@ -6,7 +6,7 @@ A responsive, single-page website concept for **Into the Matrix://**, a computer
 
 The site introduces the brand, summarizes its services and background, showcases hands-on learning projects, and directs visitors to Discord for questions and service requests. Its visual style uses a dark interface with Matrix-inspired green accents, responsive layouts, and a subtle animated background effect.
 
-The site uses plain HTML, CSS, and a small amount of JavaScript for the mobile navigation menu and card detail dialogs. It does not require a framework, external libraries, or a build process. Service descriptions and business information should be reviewed and kept accurate before using the site to advertise real services.
+The site uses plain HTML, CSS, and a small amount of JavaScript for the mobile navigation menu, section info cards, and card detail dialogs. With JavaScript enabled, the home page acts as a compact hub: navigation and in-page calls to action open each section in a dialog instead of scrolling through one long page. Without JavaScript, the complete page remains available as a normal scrollable site. It does not require a framework, external libraries, or a build process. Service descriptions and business information should be reviewed and kept accurate before using the site to advertise real services.
 
 ## Features
 
@@ -15,6 +15,7 @@ The site uses plain HTML, CSS, and a small amount of JavaScript for the mobile n
 - Service cards for computer repair, networking, cybersecurity, custom PC builds, and home lab consulting
 - Six portfolio cards with CSS-drawn image placeholders and skill tags
 - Three clearly labeled illustrative problem/solution/result examples
+- Section info cards for services, about, portfolio, recent work, trust, service area, and contact
 - Focused, keyboard-accessible detail dialogs for service, portfolio, and recent-work cards
 - A trust section highlighting background, communication, recommendations, support, and continuing education
 - A dedicated Killeen, Texas service-area section describing local and remote support options
