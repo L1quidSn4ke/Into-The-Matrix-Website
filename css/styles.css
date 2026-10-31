@@ -503,6 +503,35 @@ h1 {
   color: var(--color-accent);
 }
 
+.card-open-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-accent);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.card-open-button:hover {
+  color: var(--color-accent-bright);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.card-open-button:focus-visible,
+.card-dialog-close:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
 /* ------------------------------
    5. About section
    ------------------------------ */
@@ -702,8 +731,8 @@ h1 {
 }
 
 .portfolio-copy > p:not(.skill-label) {
-  min-height: 4.5em;
-  margin-bottom: 17px;
+  min-height: 0;
+  margin-bottom: 0;
   color: var(--color-muted);
   font-size: 0.9rem;
 }
@@ -745,6 +774,12 @@ h1 {
   padding: 24px;
 }
 
+.card-summary {
+  margin-bottom: 0;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+}
+
 .case-study {
   display: grid;
   gap: 17px;
@@ -769,6 +804,73 @@ h1 {
   margin: 0;
   color: var(--color-muted);
   font-size: 0.88rem;
+}
+
+.card-dialog {
+  width: min(560px, calc(100% - 32px));
+  max-height: min(80vh, 680px);
+  overflow: auto;
+  padding: 28px;
+  border: 1px solid rgba(100, 255, 75, 0.35);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #0c1b10, #050b06);
+  color: var(--color-text);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.65);
+}
+
+.card-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(4px);
+}
+
+.card-dialog-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.card-dialog-heading .eyebrow {
+  margin-bottom: 12px;
+}
+
+.card-dialog h2 {
+  margin-bottom: 20px;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  line-height: 1.2;
+}
+
+.card-dialog-content > :last-child {
+  margin-bottom: 0;
+}
+
+.card-dialog-content p {
+  color: var(--color-muted);
+}
+
+.card-dialog-content .service-list {
+  margin-top: 0;
+}
+
+.card-dialog-close {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.card-dialog-close:hover {
+  border-color: rgba(57, 255, 20, 0.65);
+  color: var(--color-accent);
 }
 
 .why-section {
@@ -1176,9 +1278,6 @@ h1 {
     padding-block: 12px;
   }
 
-  .portfolio-copy > p:not(.skill-label) {
-    min-height: 0;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

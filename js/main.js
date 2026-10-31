@@ -24,10 +24,45 @@ siteNavigation.addEventListener("click", (event) => {
   }
 });
 
-// Escape closes the menu and returns keyboard focus to its button.
+// Escape closes an open dialog or menu; focus returns to the opener automatically for dialogs.
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true") {
+  if (event.key !== "Escape") {
+    return;
+  }
+
+  if (cardDialog.open) {
+    cardDialog.close();
+  } else if (menuButton.getAttribute("aria-expanded") === "true") {
     closeMenu();
     menuButton.focus();
+  }
+});
+
+const cardDialog = document.querySelector(".card-dialog");
+const cardDialogTitle = document.querySelector("#card-dialog-title");
+const cardDialogContent = document.querySelector(".card-dialog-content");
+const cardDialogClose = document.querySelector(".card-dialog-close");
+
+document.querySelectorAll(".card-open-button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const card = button.closest("article");
+    const title = card.querySelector("h3");
+    const details = card.querySelector(".card-details");
+
+    cardDialogTitle.textContent = title.textContent;
+    cardDialogContent.replaceChildren(
+      ...Array.from(details.childNodes, (node) => node.cloneNode(true))
+    );
+    cardDialog.showModal();
+  });
+});
+
+cardDialogClose.addEventListener("click", () => {
+  cardDialog.close();
+});
+
+cardDialog.addEventListener("click", (event) => {
+  if (event.target === cardDialog) {
+    cardDialog.close();
   }
 });
