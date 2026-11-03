@@ -174,11 +174,11 @@ a:focus-visible {
 .matrix-rain {
   position: absolute;
   z-index: 0;
-  inset: 0;
+  inset: 0 0 0 54%;
   display: flex;
   justify-content: space-around;
   overflow: hidden;
-  opacity: 0.18;
+  opacity: 0.24;
   mask-image: linear-gradient(to bottom, transparent, #000 15%, #000 85%, transparent);
   pointer-events: none;
 }
@@ -430,6 +430,34 @@ h1 {
 .section-heading {
   max-width: 680px;
   margin-bottom: 42px;
+}
+
+.page-hero {
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+  background:
+    radial-gradient(ellipse at 82% 50%, rgba(45, 180, 34, 0.13), transparent 38%),
+    linear-gradient(135deg, #050b06 0%, #09140a 55%, #030805 100%);
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+
+.page-hero p:last-child {
+  max-width: 680px;
+  margin-bottom: 0;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--color-accent);
 }
 
 .section-heading h2,
@@ -1314,6 +1342,11 @@ h1 {
     padding-block: 64px 72px;
   }
 
+  .matrix-rain {
+    left: 62%;
+    opacity: 0.16;
+  }
+
   .hero-layout {
     grid-template-columns: 1fr;
   }
@@ -1379,6 +1412,7 @@ h1 {
 
   .matrix-rain span {
     animation: none;
+    transform: none;
   }
 
   *,
