@@ -1,21 +1,21 @@
 # Into the Matrix://
 
-A responsive, single-page website concept for **Into the Matrix://**, a computer repair, networking, and cybersecurity services brand. The project uses plain HTML, CSS, and JavaScript as a hands-on web development learning project.
+A responsive website concept for **Into the Matrix://**, a computer repair, networking, and cybersecurity services brand. The project uses plain HTML, CSS, and JavaScript as a hands-on web development learning project.
 
 ## About the project
 
-The site introduces the brand, summarizes its services and background, showcases hands-on learning projects, and directs visitors to Discord for questions and service requests. Its visual style uses a dark interface with Matrix-inspired green accents, responsive layouts, and a subtle animated background effect.
+The site introduces the brand, summarizes its services and background, showcases hands-on learning projects, and directs visitors to Discord for questions and service requests. Services, Portfolio, and Recent Work each have a dedicated page; the other informational sections remain accessible from the home page. Its visual style uses a dark interface with Matrix-inspired green accents, responsive layouts, and a subtle animated background effect.
 
-The site uses plain HTML, CSS, and a small amount of JavaScript for the mobile navigation menu, section info cards, and card detail dialogs. With JavaScript enabled, the home page acts as a compact hub: navigation and in-page calls to action open each section in a dialog instead of scrolling through one long page. Without JavaScript, the complete page remains available as a normal scrollable site. It does not require a framework, external libraries, or a build process. Service descriptions and business information should be reviewed and kept accurate before using the site to advertise real services.
+The site uses plain HTML, CSS, and a small amount of JavaScript for the mobile navigation menu, home-page section info cards, and detail dialogs for service, portfolio, and recent-work items. Without JavaScript, the complete home page remains available as a normal scrollable site, and the dedicated pages show their content directly. It does not require a framework, external libraries, or a build process. Service descriptions and business information should be reviewed and kept accurate before using the site to advertise real services.
 
 ## Features
 
-- Semantic HTML sections for navigation, services, about, portfolio, recent work, trust, service area, and contact information
+- Dedicated pages for services, portfolio, and recent work, plus home-page sections for about, trust, service area, and contact information
 - Responsive layout for desktop, tablet, and mobile screens
 - Service cards for computer repair, networking, cybersecurity, custom PC builds, and home lab consulting, each with a custom inline icon
 - Six portfolio cards with CSS-drawn image placeholders and skill tags
 - Three clearly labeled illustrative problem/solution/result examples
-- Section info cards for services, about, portfolio, recent work, trust, service area, and contact
+- Home-page section info cards for about, trust, service area, and contact
 - Focused, keyboard-accessible detail dialogs for service, portfolio, and recent-work cards
 - A trust section highlighting background, communication, recommendations, support, and continuing education
 - A dedicated Killeen, Texas service-area section describing local and remote support options
@@ -28,13 +28,16 @@ The site uses plain HTML, CSS, and a small amount of JavaScript for the mobile n
 ## Project structure
 
 ```text
-Learning HTML/
-├── index.html       # Page content and semantic structure
-├── README.md        # Project overview and usage notes
+Into-The-Matrix-Website/
+├── index.html        # Home page and general information
+├── services.html     # Services page
+├── portfolio.html    # Projects and portfolio page
+├── recent-work.html  # Recent-work examples
+├── README.md         # Project overview and usage notes
 ├── css/
-│   └── styles.css   # Theme, layout, and responsive styles
+│   └── styles.css    # Theme, layout, and responsive styles
 └── js/
-    └── main.js      # Mobile navigation menu behavior
+    └── main.js       # Navigation and detail-dialog behavior
 ```
 
 ## View the site

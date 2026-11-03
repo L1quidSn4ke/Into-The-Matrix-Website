@@ -10,9 +10,9 @@ const cardDialog = document.querySelector(".card-dialog");
 const cardDialogTitle = document.querySelector("#card-dialog-title");
 const cardDialogContent = document.querySelector(".card-dialog-content");
 const cardDialogClose = document.querySelector(".card-dialog-close");
-const sections = Array.from(
-  document.querySelectorAll("#main-content > section:not(#home)")
-);
+const sections = sectionDialog
+  ? Array.from(document.querySelectorAll("#main-content > section:not(#home)"))
+  : [];
 const sectionPositions = new Map(
   sections.map((section) => [
     section,
@@ -77,9 +77,9 @@ document.addEventListener("keydown", (event) => {
     return;
   }
 
-  if (cardDialog.open) {
+  if (cardDialog && cardDialog.open) {
     cardDialog.close();
-  } else if (sectionDialog.open) {
+  } else if (sectionDialog && sectionDialog.open) {
     sectionDialog.close();
   } else if (menuButton.getAttribute("aria-expanded") === "true") {
     closeMenu();
@@ -117,41 +117,53 @@ document.querySelectorAll(".card-open-button").forEach((button) => {
   });
 });
 
-cardDialogClose.addEventListener("click", () => {
-  cardDialog.close();
-});
-
-cardDialog.addEventListener("click", (event) => {
-  if (event.target === cardDialog) {
+if (cardDialog && cardDialogClose) {
+  cardDialogClose.addEventListener("click", () => {
     cardDialog.close();
-  }
-});
+  });
 
-sectionDialogClose.addEventListener("click", () => {
-  sectionDialog.close();
-});
+  cardDialog.addEventListener("click", (event) => {
+    if (event.target === cardDialog) {
+      cardDialog.close();
+    }
+  });
+}
 
-sectionDialog.addEventListener("click", (event) => {
-  if (event.target === sectionDialog) {
+if (sectionDialog && sectionDialogClose) {
+  sectionDialogClose.addEventListener("click", () => {
     sectionDialog.close();
-  }
-});
+  });
 
-sectionDialog.addEventListener("close", () => {
-  const opener = sectionDialogOpener;
-  restoreActiveSection();
-  sectionDialogOpener = null;
+  sectionDialog.addEventListener("click", (event) => {
+    if (event.target === sectionDialog) {
+      sectionDialog.close();
+    }
+  });
 
-  if (opener && opener.getClientRects().length > 0) {
-    opener.focus();
-  } else if (menuButton.getClientRects().length > 0) {
-    menuButton.focus();
-  } else {
-    siteNavigation.querySelector("a").focus();
-  }
-});
+  sectionDialog.addEventListener("close", () => {
+    const opener = sectionDialogOpener;
+    restoreActiveSection();
+    sectionDialogOpener = null;
+
+    if (opener && opener.getClientRects().length > 0) {
+      opener.focus();
+    } else if (menuButton.getClientRects().length > 0) {
+      menuButton.focus();
+    } else {
+      siteNavigation.querySelector("a").focus();
+    }
+  });
+}
 
 sections.forEach((section) => {
   section.hidden = true;
 });
-document.documentElement.classList.add("section-cards-enabled");
+
+if (sectionDialog) {
+  document.documentElement.classList.add("section-cards-enabled");
+
+  const initialSection = document.getElementById(location.hash.slice(1));
+  if (sections.includes(initialSection)) {
+    openSection(initialSection, null);
+  }
+}
