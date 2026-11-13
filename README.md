@@ -6,7 +6,7 @@ A responsive website concept for **Into the Matrix://**, a computer repair, netw
 
 The site introduces the brand, summarizes its services and background, showcases hands-on learning projects, and directs visitors to Discord for questions and service requests. Services, Portfolio, and Recent Work each have a dedicated page; the other informational sections remain accessible from the home page. Its visual style uses a dark interface with Matrix-inspired green accents, responsive layouts, and a subtle animated background effect.
 
-The site uses plain HTML, CSS, and a small amount of JavaScript for the mobile navigation menu, home-page section info cards, and detail dialogs for service, portfolio, and recent-work items. Without JavaScript, the complete home page remains available as a normal scrollable site, and the dedicated pages show their content directly. It does not require a framework, external libraries, or a build process. Service descriptions and business information should be reviewed and kept accurate before using the site to advertise real services.
+The site uses plain HTML, CSS, and a small amount of JavaScript for the mobile navigation menu, home-page section info cards, and detail dialogs for service, portfolio, and recent-work items. Without JavaScript, the complete home page remains available as a normal scrollable site, and the dedicated pages show their content directly. It does not require a framework, external libraries, or a build process.
 
 ## Features
 
@@ -40,34 +40,6 @@ Into-The-Matrix-Website/
     └── main.js       # Navigation and detail-dialog behavior
 ```
 
-## View the site
-
-No installation is required. Open `index.html` in a modern web browser to view the page.
-
-For a more realistic local preview, open the project folder in a code editor and use its HTML preview or local server feature if available.
-
-## Customize before publishing
-
-1. Review the service descriptions, service area, and business background for accuracy.
-2. Replace the CSS-drawn portfolio placeholders and illustrative recent-work scenarios with representative project images and verified work before publishing them as completed client projects.
-3. Confirm that the Discord invite and channel names are current.
-4. Add a business email or contact form when one is available.
-5. Update the page title and meta description in the `<head>` of `index.html` if the business details change.
-6. Test the layout at both desktop and mobile widths before sharing the site.
-
 ## Learning goals
 
 This project is intended to practice writing semantic HTML, organizing CSS with reusable classes and custom properties, creating responsive layouts with Grid and Flexbox, adding simple JavaScript interactions, and considering basic accessibility.
-
-## Implemented Commit Ideas
-
-- [x] `feat: add falling matrix style code`
-- [x] `feat: add portfolio section`
-- [x] `feat: add customer success stories` — the current Recent Work examples are illustrative, not verified client testimonials.
-- [x] `feat: add homelab project cards`
-- [x] `feat: add Raspberry Pi showcase`
-- [x] `style: improve portfolio card layout`
-- [x] `feat: add service area section`
-- [x] `feat: add business footer`
-
-Replace illustrative examples with accurate, client-approved stories before presenting them as completed customer work.
